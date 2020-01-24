@@ -1,0 +1,29 @@
+# Only for local use
+cassini-1:
+  accountId: 591509591202
+  region: ap-northeast-1
+  tld: skyscannerplatform.net
+  vpc:
+    azs:
+      - a
+      - c
+      - d
+  peering_config: 'no'
+
+Defaults:
+  vpc:
+    azs:
+      - a
+      - b
+      - c
+    cidr_blocks:
+      - "172.16.0.0/16"
+      - "172.17.0.0/16"
+      - "172.18.0.0/16"
+      - "172.20.0.0/16"
+  CommonTags:
+    Project: globe
+    Contact: cassinisquad@skyscanner.net
+  enabled_projects:
+    - cassini
+    - k8s

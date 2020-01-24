@@ -1,0 +1,15 @@
+---
+version: '1'
+type: infrastructure
+extras:
+  tags:
+    - strata
+
+component:
+  name: template-strata
+  owner: You
+  description: Strata layer for template
+  personalDataHandling: none
+  soxScope: False
+  serviceClass: business-class
+  paymentProcessing: False

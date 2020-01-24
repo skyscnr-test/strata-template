@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+ install:
+    commands:
+      - pip install boto3
+      - pip install StrataCore --no-deps --trusted-host skyscanner-strata-package-repository.s3-website.eu-west-2.amazonaws.com --extra-index-url http://skyscanner-strata-package-repository.s3-website.eu-west-2.amazonaws.com
+      - ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - CROSS_ACCOUNT_KMS_KEY_ARN="arn:aws:kms:eu-west-2:$DEPLOYMENT_ACCOUNT_ID:key/$CROSS_ACCOUNT_KMS_KEY_ID"
+      - cdk diff --app "python3 app.py" &> output.raw || true
+      - cdk bootstrap || true
+      - aws s3 cp output.raw s3://adf-cdk-artifactstore/changesets/$PIPELINE_EXECUTION_ID/$ACCOUNT_ID-$CODEBUILD_INITIATOR.diff --acl bucket-owner-full-control --sse aws:kms --sse-kms-key-id $CROSS_ACCOUNT_KMS_KEY_ARN
+    runtime-versions:
+      python: 3.7
+artifacts:
+  files: '**/*'

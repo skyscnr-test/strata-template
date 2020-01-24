@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+ install:
+    commands:
+      - pip install boto3
+      - pip install StrataCore --no-deps --trusted-host skyscanner-strata-package-repository.s3-website.eu-west-2.amazonaws.com --extra-index-url http://skyscanner-strata-package-repository.s3-website.eu-west-2.amazonaws.com
+      - ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - cdk deploy "*" --app "python3 app.py" --role-arn "arn:aws:iam::${ACCOUNT_ID}:role/CDKDeploy" --require-approval never
+    runtime-versions:
+      python: 3.7
+artifacts:
+  files: '**/*'
