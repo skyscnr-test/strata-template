@@ -6,9 +6,9 @@ extras:
     - strata
 
 component:
-  name: data_platform_access-strata
+  name: template-strata
   owner: You
-  description: Strata layer for data_platform_access
+  description: Strata layer for template
   personalDataHandling: none
   soxScope: False
   serviceClass: business-class
