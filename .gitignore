@@ -1,3 +1,4 @@
 .idea/
 cdk.out/
 venv/
+.DS_Store
