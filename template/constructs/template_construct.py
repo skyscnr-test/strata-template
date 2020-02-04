@@ -7,7 +7,7 @@ from aws_cdk import (
 )
 
 
-class DelegationConstruct(StrataConstruct):
+class TemplateConstruct(StrataConstruct):
 
     def __init__(self, scope: core.Construct, id: str, stratum: StratumConfig, account_name, **kwargs) -> None:
         super().__init__(scope, id, stratum)
