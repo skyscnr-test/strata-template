@@ -8,7 +8,7 @@ from aws_cdk import (
 )
 
 
-class AccountHostedZoneStack(StrataStack):
+class TemplateStack(StrataStack):
 
     def __init__(self, scope: core.Construct, id: str, account_name, stratum: StratumConfig, **kwargs) -> None:
         super().__init__(scope, id, stratum, **kwargs)
