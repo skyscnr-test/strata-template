@@ -2,14 +2,13 @@ clone:
   clone:
     image: 325714046698.dkr.ecr.eu-west-1.amazonaws.com/dmx/drone-git:next
     pull: true
-
+    
 pipeline:
   replicate-code:
-    image: gliderlabs/alpine:3.6
+    image: 325714046698.dkr.ecr.eu-west-1.amazonaws.com/drone-plugins/strata-config:v2-latest
     commands:
-      - sh replicate.sh
+      - strata-cli replicate-repo <you-repo-name-here>
     secrets:
-      # Contact Cassini about these secrets
       - source: codecommit_user
         target: CODECOMMIT_USER
       - source: codecommit_pw
