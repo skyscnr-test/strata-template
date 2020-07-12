@@ -1,15 +1,12 @@
-from StrataCore.strata_config import StratumConfig
-from StrataCore.strata_cdk import StrataConstruct
-from aws_cdk import (
-    aws_cloudformation as cfn,
-    aws_ssm as ssm,
-    core,
-)
+from StrataCore.strata_cdk import StrataConstruct, StrataStack
 
 
 class TemplateConstruct(StrataConstruct):
 
-    def __init__(self, scope: core.Construct, id: str, stratum: StratumConfig, account_name, **kwargs) -> None:
-        super().__init__(scope, id, stratum)
+    def __init__(self, scope: StrataStack, id: str) -> None:
+        super().__init__(scope, id)
+
+        # access config via self.config
+        self.config
 
         # Make resources here
