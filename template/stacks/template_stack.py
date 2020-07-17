@@ -1,16 +1,12 @@
+from StrataCore.strata_cdk import StrataStack, StrataApp
 from StrataCore.strata_config import StratumConfig
-from StrataCore.strata_cdk import StrataStack
-from StrataCore.utils import save_parameter, as_list
 
-from aws_cdk import (
-    core,
-    aws_route53 as route53
-)
+from template.constructs.template_construct import TemplateConstruct
 
 
 class TemplateStack(StrataStack):
 
-    def __init__(self, scope: core.Construct, id: str, account_name, stratum: StratumConfig, **kwargs) -> None:
+    def __init__(self, scope: StrataApp, id: str, stratum: StratumConfig, **kwargs) -> None:
         super().__init__(scope, id, stratum, **kwargs)
 
-        construct = TemplateConstruct(self, "template-construct", stratum, account_name)
+        construct = TemplateConstruct(self, "template-construct",)
