@@ -42,6 +42,6 @@ s3transfer==0.2.1
 six==1.12.0
 StrataCore==2.0.2
 typing-extensions==3.7.4
-urllib3==1.25.6
+urllib3==1.25.10
 wcwidth==0.1.7
 zipp==0.6.0
