@@ -37,7 +37,7 @@ py==1.8.0
 pyparsing==2.4.2
 pytest==5.2.1
 python-dateutil==2.8.0
-PyYAML==5.1.2
+PyYAML==5.3.1
 s3transfer==0.2.1
 six==1.12.0
 StrataCore==2.0.2
