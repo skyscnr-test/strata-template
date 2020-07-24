@@ -7,7 +7,7 @@ extras:
 
 component:
   name: template-strata
-  owner: You
+  owner: Cassini
   description: Strata layer for template
   personalDataHandling: none
   soxScope: False
