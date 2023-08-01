@@ -27,7 +27,7 @@ COPY --chown=skyscanner \
 	package.json \
 	package-lock.json \
 	cdk.json ./
-ADD --chown=skyscanner ./template ./template
+ADD --chown=skyscanner ./replace-me-folder-name ./replace-me-folder-name
 
 RUN PIP_CONFIG_FILE=/home/skyscanner/pip.conf pip install -r requirements.txt --compile
 RUN if [ "$ENV" = "local" ]; then PIP_CONFIG_FILE=/home/skyscanner/pip.conf pip install -r requirements-dev.txt --compile; fi

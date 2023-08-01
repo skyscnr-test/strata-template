@@ -1,6 +1,10 @@
 ## Making a strata from this template? Your to-dos:
 
-- Update any area marked `replace-me` with your stratum repo name and / or stratum description
+- Update any area marked `replace-me-strata-name` with your stratum repo name
+
+- Update any area marked `replace-me-strata-description` with your stratum description
+
+- Update any area marked `replace-me-folder-name` with the folder containing your stacks
 
 - Update any area marked `your-squad` with your squad name
 

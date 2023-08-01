@@ -1,6 +1,6 @@
 .PHONY: freeze freeze-upgrade freeze-dev freeze-dev-upgrade install-pip-tools artifactory-login
 
-STRATA_NAME := "replace-me"
+STRATA_NAME := "replace-me-strata-name"
 ACCOUNT_ID  := $(shell aws sts get-caller-identity --query 'Account' --output text)
 PWD         := $(shell pwd)
 
@@ -44,7 +44,7 @@ build:
 		--build-arg ENV=local
 
 DOCKER_OPTS_CI_TEST := \
-	-v $(PWD)/slingshot:/usr/local/skyscanner/app/replace-me \
+	-v $(PWD)/slingshot:/usr/local/skyscanner/app/<replace-me-folder-name> \
 	-v $(PWD)/app.py:/usr/local/skyscanner/app/app.py \
 	-v $(PWD)/local_config.yml:/usr/local/skyscanner/app/local_config.yml \
 	-v $(PWD)/tests:/usr/local/skyscanner/app/tests \
@@ -69,7 +69,7 @@ docker-update-snapshots:
 		python -m pytest -rP --snapshot-update
 
 DOCKER_OPTS_LOCAL := \
-	-v $(PWD)/slingshot:/usr/local/skyscanner/app/replace-me \
+	-v $(PWD)/slingshot:/usr/local/skyscanner/app/<replace-me-folder-name> \
 	-v $(PWD)/app.py:/usr/local/skyscanner/app/app.py \
 	-v $(PWD)/local_config.yml:/usr/local/skyscanner/app/local_config.yml \
 	-v $(PWD)/cdk.out:/usr/local/skyscanner/app/cdk.out \
