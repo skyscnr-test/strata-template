@@ -2,3 +2,5 @@
 cdk.out/
 venv/
 .DS_Store
+pip.conf
+.npmrc
