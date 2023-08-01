@@ -1,31 +1,39 @@
-## template-strata readme
-- .catalog.yml      - update component info with your strata info
+## Making a strata from this template? Your to-dos:
 
-- .drone.yml        - ensure replicate step has your repo name and add tests here.
+- Update any area marked `replace-me-strata-name` with your stratum repo name
 
-- requirements.txt  - make sure this is up to date - cdk should be at least 1.55.0, and add in any requirements here that your project needs specifically.
+- Update any area marked `replace-me-strata-description` with your stratum description
 
-- app.py                            - replace all occurrences of template with your strata name.
+- Update any area marked `replace-me-folder-name` with the folder containing your stacks
 
-- cdk.json          -  this is the CDK metadata and normally doesn't require modification
+- Update any area marked `your-squad` with your squad name
+
+- .drone.yml: ensure you _keep_ the replicate step as this is what triggers deployment
+
+- app.py: replace all occurrences of `template` with your stratum name
+
+- .catalog.yml: update all the information here so that Tower is updated
+
+- Dockerfile: update the folder name on this line `ADD --chown=skyscanner ./template ./template`
+
+## Other files of note
+
+- requirements.txt: this is generated with `make freeze`
+
+- cdk.json: this is the CDK metadata and normally doesn't require modification
+
+- local_config.yml: contains instructions on which account to diff changes against (usually will be a test account)
 
 ## Environment Vars
 export AWS_REGION=eu-west-2
 
 
-## Requirements for test
+## Running tests locally
 ``` 
-nvm install 14.11
-
-npm install -g aws-cdk
-
-pip install -r requirements.txt
-
-cdk diff
-
-You can check cdk version and config with 
-
-cdk doctor
+make artifactory-login
+make freeze-dev
+make build
+make test-ci
 ```
 
-For further questiond please flag @cassini-gf 
+For further questions please raise a ticket with Cassini GF

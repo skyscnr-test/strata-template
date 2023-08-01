@@ -12,9 +12,11 @@ def account_level(context: StrataApp, account_id):
     template_stack = TemplateStack(context, 'account-template-stack', None)
     return [template_stack]
 
+
 def region_level(context: StrataApp, stratum: StratumConfig, region: str):
     template_stack = TemplateStack(context, 'region-template-stack', stratum, env={'region': stratum.region})
     return [template_stack]
+
 
 def az_level(context: StrataApp, stratum: StratumConfig, az: str):
     template_stack = TemplateStack(context, f'az-{az}-template-stack', stratum, env={'region': stratum.region})

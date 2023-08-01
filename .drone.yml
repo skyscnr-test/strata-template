@@ -7,7 +7,7 @@ pipeline:
   replicate-code:
     image: 325714046698.dkr.ecr.eu-west-1.amazonaws.com/drone-plugins/strata-config:v3-latest
     commands:
-      - strata-cli replicate-repo <you-repo-name-here>
+      - strata-cli replicate-repo <replace-me-strata-name>
     when:
       branch: master
       event:
