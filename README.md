@@ -8,7 +8,7 @@
 
 - Update any area marked `your-squad` with your squad name
 
-- .drone.yml: ensure you _keep_ the replicate step as this is what triggers deployment
+- .github/workflows/main.yml: runs the strata reusable workflow which will test your repo and then replicate it to CodeCommit
 
 - app.py: replace all occurrences of `template` with your stratum name
 
