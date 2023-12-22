@@ -1,3 +1,5 @@
+Note that the reusable workflow is unable to run for this template repo because our self-hosted runners aren't enabled on public repositories for our GH Enterprise.
+
 ## Making a strata from this template? Your to-dos:
 
 - Update any area marked `replace-me-strata-name` with your stratum repo name
