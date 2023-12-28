@@ -38,4 +38,4 @@ max-line-length = "120"
 max-line-length = 120
 extend-ignore = "E203, E231, E501, IF100, I001, T003"
 import-order-style = "isort"
-application-import-names = "replace-me,tests"
+application-import-names = "replace-me-folder-name,tests"
