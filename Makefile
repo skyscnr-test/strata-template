@@ -23,7 +23,14 @@ install-dev: upgrade-pip requirements-dev.txt requirements.txt
 	pip install -r requirements-dev.txt --compile
 
 lint:
-	python -m flake8
+	isort --profile black --line-width 120 replace-me/ tests/ app.py
+	black -t py311 -l 120 replace-me/ tests/ app.py --diff --check
+	flake8 replace-me/ tests/ app.py
+
+unit:
+	python -m pytest -rP
+
+test: lint unit
 
 freeze: upgrade-pip install-pip-tools pyproject.toml
 	python -m piptools compile pyproject.toml --output-file requirements.txt --no-emit-index-url --resolver backtracking
@@ -60,7 +67,7 @@ test-ci:
 	docker run \
 		$(DOCKER_OPTS_CI_TEST) \
 		$(STRATA_NAME):latest \
-		bash -c "pip install -r requirements-dev.txt && python -m pytest -rP"
+		bash -c "make install-dev && make test"
 
 docker-update-snapshots:
 	docker run \
