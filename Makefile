@@ -23,9 +23,9 @@ install-dev: upgrade-pip requirements-dev.txt requirements.txt
 	pip install -r requirements-dev.txt --compile
 
 lint:
-	isort --profile black --line-width 120 replace-me/ tests/ app.py
-	black -t py311 -l 120 replace-me/ tests/ app.py --diff --check
-	flake8 replace-me/ tests/ app.py
+	isort --profile black --line-width 120 replace-me-folder-name/ tests/ app.py
+	black -t py311 -l 120 replace-me-folder-name/ tests/ app.py --diff --check
+	flake8 replace-me-folder-name/ tests/ app.py
 
 unit:
 	python -m pytest -rP
