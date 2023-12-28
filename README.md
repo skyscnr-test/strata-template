@@ -1,3 +1,5 @@
+Note that the reusable workflow is unable to run for this template repo because our self-hosted runners aren't enabled on public repositories for our GH Enterprise.
+
 ## Making a strata from this template? Your to-dos:
 
 - Update any area marked `replace-me-strata-name` with your stratum repo name
@@ -8,7 +10,7 @@
 
 - Update any area marked `your-squad` with your squad name
 
-- .drone.yml: ensure you _keep_ the replicate step as this is what triggers deployment
+- .github/workflows/main.yml: runs the strata reusable workflow which will test your repo and then replicate it to CodeCommit
 
 - app.py: replace all occurrences of `template` with your stratum name
 

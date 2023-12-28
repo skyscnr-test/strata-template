@@ -1,0 +1,17 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  strata:
+    # This calls the strata reusable workflow which you can find in the internal skyscanner org
+    uses: skyscanner/reusable-workflows/.github/workflows/strata.yaml@main
+    secrets: inherit
+    with:
+      skip_tests: true
