@@ -3,10 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "replace-me-strata-name"
+name = "replace-me"
 version = "1.0.0"
 readme = "README.md"
-description="replace-me-strata-description"
+description="replace-me"
 requires-python=">=3.11.0"
 dependencies = [
     "aws-cdk-lib==2.80.0",
