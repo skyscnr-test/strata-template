@@ -54,6 +54,8 @@ DOCKER_OPTS_CI_TEST := \
 	-v $(PWD)/slingshot:/usr/local/skyscanner/app/<replace-me-folder-name> \
 	-v $(PWD)/app.py:/usr/local/skyscanner/app/app.py \
 	-v $(PWD)/local_config.yml:/usr/local/skyscanner/app/local_config.yml \
+	-v $(PWD)/pyproject.toml:/usr/local/skyscanner/app/pyproject.toml \
+	-v $(PWD)/Makefile:/usr/local/skyscanner/app/Makefile \
 	-v $(PWD)/tests:/usr/local/skyscanner/app/tests \
 	-e CONFIG_OVERRIDE=local_config.yml \
 	-e ACCOUNT_ID=$(ACCOUNT_ID) \

@@ -47,6 +47,10 @@ constructs==10.2.69
 docutils==0.16
     # via awscli
 flake8==6.1.0
+    # via
+    #   flake8-pyproject
+    #   replace-me (pyproject.toml)
+flake8-pyproject==1.2.3
     # via replace-me (pyproject.toml)
 importlib-resources==6.0.0
     # via jsii
@@ -113,7 +117,7 @@ s3transfer==0.6.1
     #   boto3
 six==1.16.0
     # via python-dateutil
-stratacore==4.0.1
+stratacore==4.0.6
     # via replace-me (pyproject.toml)
 typeguard==2.13.3
     # via
@@ -127,3 +131,5 @@ typing-extensions==4.7.1
     # via jsii
 urllib3==1.26.16
     # via botocore
+wheel==0.42.0
+    # via stratacore
