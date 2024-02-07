@@ -1,5 +1,5 @@
 FROM 325714046698.dkr.ecr.eu-west-1.amazonaws.com/skyscanner/node-edge:1.6.0 as node
-FROM 325714046698.dkr.ecr.eu-west-1.amazonaws.com/skyscanner/python-edge:3.2.1
+FROM 325714046698.dkr.ecr.eu-west-1.amazonaws.com/skyscanner/python-edge:3.2.3
 
 
 ARG ENV
