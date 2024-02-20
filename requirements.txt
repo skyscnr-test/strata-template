@@ -91,7 +91,7 @@ s3transfer==0.6.1
     #   boto3
 six==1.16.0
     # via python-dateutil
-stratacore==4.0.6
+stratacore==4.1.1
     # via replace-me (pyproject.toml)
 typeguard==2.13.3
     # via
