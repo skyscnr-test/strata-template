@@ -14,3 +14,7 @@ component:
   serviceClass: business-class
   paymentProcessing: False
   deploymentSystem: strata
+  outOfHoursSupportRequired: False
+  supportOverride:
+    slackChannel: "#engineering-support"
+    confluenceUrl: "https://skyscanner.atlassian.net/wiki/x/-rueJ"
